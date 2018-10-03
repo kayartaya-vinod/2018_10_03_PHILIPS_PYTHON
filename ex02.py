@@ -10,3 +10,5 @@ if num < 100:
 else:
     print('{} is more than or equals to {}'.format(num, 100));
 
+
+print('End of script execution!')
