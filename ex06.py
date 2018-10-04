@@ -13,4 +13,5 @@ def main():
     num = int(input('Enter a number: '))
     print_table(num)
 
-if __name__=='__main__': main()
+if __name__=='__main__': 
+    main()
