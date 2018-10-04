@@ -1,4 +1,5 @@
 from datetime import date # builtin module
+import json
 
 '''
 This is a utility module with few useful functions
@@ -91,10 +92,46 @@ def num2words(num = None):
     if num>999999999: raise ValueError('Max value is 999999999')
 
     
-if __name__=='__main__':
-    print(__in_words__(12))
-    print(__in_words__(18))
-    print(__in_words__(28))
-    print(__in_words__(59))
-    print(__in_words__(60))
-    print(__in_words__(99))
+def csv2json(filename, indent=4):
+    '''This method accepts a readable CSV filename as input,
+    and returns a string representing the data in JSON format
+    '''
+
+    if type(filename) != str: raise TypeError('filename must be a str')
+
+    try:
+        with open(filename, encoding='utf-8') as file:
+            headers = file.readline().strip().split(',')
+            lst = []
+            for line in file: # process the second line onwards
+                values = line.strip().split(',')
+                data = dict(zip(headers, values))
+                lst.append(data)
+            return json.dumps(lst, indent=indent)
+    except:
+        raise ValueError('Invalid filename: ' + filename)
+
+# this function overrides (re-writes) the above function 
+# with the same name
+def csv2json(filename, indent=4):
+    '''This method accepts a readable CSV filename as input,
+    and returns a string representing the data in JSON format
+    '''
+
+    if type(filename) != str: raise TypeError('filename must be a str')
+
+    try:
+        with open(filename, encoding='utf-8') as file:
+            headers = file.readline().strip().split(',')
+            
+            lst = [
+                dict(zip(headers,line.strip().split(','))) 
+                for line in file]
+
+            return json.dumps(lst, indent=indent)
+    except:
+        raise ValueError('Invalid filename: ' + filename)
+
+if __name__=='__main__': 
+    output = csv2json('phonebook1.csv')
+    print(output)
