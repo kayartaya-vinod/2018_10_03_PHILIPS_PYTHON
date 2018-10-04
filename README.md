@@ -7,7 +7,7 @@ Python supports both procedural and object orinented programming. Many language 
 The language was named after the popular TV show, `Monty Python's Flying Circus` (1969-74).
 
 
-<img src="/images/python/guido_van_rossum.jpg" style="height: 200px;" title="Guido van Rossum" alt="Guido van Rossum" class="img img-thumbnail"> <img src="/images/python/montypython.jpg" style="height: 200px;" title="Monty Python's Flying Circus" alt="Monty Python's Flying Circus" class="img img-thumbnail">
+<img src="https://vinod.co/images/python/guido_van_rossum.jpg" style="height: 200px;" title="Guido van Rossum" alt="Guido van Rossum" class="img img-thumbnail"> <img src="https://vinod.co/images/python/montypython.jpg" style="height: 200px;" title="Monty Python's Flying Circus" alt="Monty Python's Flying Circus" class="img img-thumbnail">
 
 Features of Python include:
 
