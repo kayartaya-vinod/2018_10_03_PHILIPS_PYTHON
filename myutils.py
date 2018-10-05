@@ -1,5 +1,6 @@
 from datetime import date # builtin module
 import json
+import sys
 
 '''
 This is a utility module with few useful functions
@@ -133,5 +134,6 @@ def csv2json(filename, indent=4):
         raise ValueError('Invalid filename: ' + filename)
 
 if __name__=='__main__': 
-    output = csv2json('phonebook1.csv')
-    print(output)
+    month = int(sys.argv[1]) if len(sys.argv)>1 else None
+    year = int(sys.argv[2]) if len(sys.argv)>2 else None
+    print_calendar(month, year)
