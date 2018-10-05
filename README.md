@@ -1953,11 +1953,9 @@ $
 
 ### Watch the video : Building and deploying a Python package
 
-<div class="row">
-	<div class="col-md-12">
-		<div data-type="youtube" data-video-id="grrMgF9KNRI"></div>
-	</div>
-</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/grrMgF9KNRI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 
 While uploading your package to the  Pypi repository, the pip3 (or pip) command also looks for a file called `.pypirc` in your home directory. It contains the login credentials required to publish new content.
 
