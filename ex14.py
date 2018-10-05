@@ -1,16 +1,16 @@
 class Person(object):
     def __init__(self, **kwargs):
-        self.__name = kwargs.get('name')
-        self.__email = kwargs.get('email')
-        self.__phone = kwargs.get('phone')
-        self.__age = kwargs.get('age')
-        self.__city = kwargs.get('city', 'Bangalore')
+        self.name = kwargs.get('name')
+        self.email = kwargs.get('email')
+        self.phone = kwargs.get('phone')
+        self.age = kwargs.get('age')
+        self.city = kwargs.get('city', 'Bangalore')
+        # print('from inisde of Person.__init__')
 
     def __str__(self):
         '''this function returns the textual representation
         of the object referred by "self"'''
         return 'Person(name={}, city={}, email={}, phone={}, age={})'.format(self.__name, self.__city, self.__email, self.__phone, self.__age)
-
 
     @property
     def name(self):
@@ -20,7 +20,6 @@ class Person(object):
     def name(self, name):
         self.__name = name
 
-
     @property
     def city(self):
         return self.__city
@@ -28,7 +27,6 @@ class Person(object):
     @city.setter
     def city(self, city):
         self.__city = city
-
 
     @property
     def email(self):
@@ -38,15 +36,16 @@ class Person(object):
     def email(self, email):
         self.__email = email
 
-
     @property
     def age(self):
         return self.__age
 
     @age.setter
     def age(self, age):
-        if type(age) != int: raise TypeError('Age must be integer!')
-        if age<1 or age>120: raise ValueError('Invalid age for a person!')
+        if type(age) not in (int, type(None)) : 
+            raise TypeError('Age must be integer!')
+        if age!=None and (age<1 or age>120): 
+            raise ValueError('Invalid age for a person!')
         self.__age = age
 
     @property
@@ -63,6 +62,9 @@ def main():
     p1.phone = '9731424784'
 
     print(p1)
+
+    p2 = Person(name='Ramesh', age=333)
+    print(p2)
 
 if __name__=='__main__':
     try: 
